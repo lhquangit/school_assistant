@@ -12,7 +12,7 @@ Observed gap:
 
 Reframed as a product opportunity:
 
-> Cơ hội đóng gói Chatbot kết nối phụ huynh và nhà trường
+> Cơ hội đóng gói ứng dụng phụ huynh giúp nhà trường chủ động gửi insight học tập kịp thời
 
 ---
 
@@ -24,7 +24,7 @@ Reframed as a product opportunity:
   - Từ góc nhìn giáo viên:  
   Nhập điểm bài kiểm tra → cập nhật nhận xét → upload lên hệ thống → lặp lại mỗi tuần / mỗi lần kiểm tra
   - Từ góc nhìn phụ huynh:  
-  Nhận thông báo → (có thể) đăng nhập hệ thống → xem điểm / nhận xét của giáo viên / xếp hạng → trao đổi với con → lặp lại theo kỳ hoặc khi có vấn đề
+  Nhận push notification → mở app riêng của nhà trường → xem insight / điểm / nhận xét liên quan → phản hồi nhanh hoặc trao đổi với con → lặp lại mỗi khi có thay đổi quan trọng
 - **Pain moment:** Phụ huynh chỉ biết tình trạng học tập của con khi đã tổng kết cuối kỳ, khiến họ mất cơ hội can thiệp sớm và dẫn đến kết quả học tập thấp hoặc tụt hạng.
 - **Why now:** Các trường học đã số hóa dữ liệu học tập, nhưng việc truyền tải thông tin tới phụ huynh vẫn bị gián đoạn theo chu kỳ. Sự xuất hiện của AI cho phép tự động hóa việc tổng hợp và gửi thông tin theo thời gian thực, biến một quy trình trước đây thủ công và không kịp thời thành trải nghiệm liên tục.
 - **Access path:** Tiếp cận ban giám hiệu hoặc phòng IT của trường để tích hợp vào hệ thống quản lý học tập hiện có, sau đó triển khai xuống phụ huynh thông qua kênh thông báo chính thức của nhà trường.
@@ -44,7 +44,7 @@ Reframed as a product opportunity:
   - Stress vận hành (cả 2 phía): Giáo viên nhận nhiều tin nhắn hỏi riêng từ phụ huynh, gây quá tải trong việc phản hồi
   - Outcome xấu: Kết quả học tập của học sinh giảm mà không được phát hiện sớm
 - **Evidence / proxy evidence:** Phụ huynh thường trao đổi trong các group lớp để hỏi thông tin về điểm số và tình hình học tập của con, và giáo viên thường xuyên nhận tin nhắn hỏi riêng, cho thấy việc tiếp cận thông tin hiện tại chưa thuận tiện và kịp thời.
-- **Why underserved:** Mặc dù dữ liệu học tập đã được số hóa trong hệ thống nhà trường, phụ huynh không có thói quen truy cập thường xuyên và các hệ thống hiện tại không chủ động cung cấp thông tin theo thời gian thực, khiến nhu cầu theo dõi liên tục chưa được phục vụ tốt.
+- **Why underserved:** Mặc dù dữ liệu học tập đã được số hóa trong hệ thống nhà trường, phụ huynh không có thói quen truy cập LMS thường xuyên và các hệ thống hiện tại thiếu một trải nghiệm mobile-first đủ đơn giản, đủ chủ động và đủ dễ hiểu để họ quay lại khi có vấn đề thực sự đáng chú ý.
 
 ---
 
@@ -64,7 +64,7 @@ Giúp phụ huynh phát hiện sớm vấn đề và can thiệp kịp thời đ
 
 **Cách tiếp cận khác biệt (Distinct approach):**  
 
-Biến dữ liệu học tập trong hệ thống nội bộ thành các insight dễ hiểu và chủ động phân phối tới phụ huynh theo thời gian thực, thay vì phụ thuộc vào hành vi truy cập của họ
+Biến dữ liệu học tập trong hệ thống nội bộ thành các insight dễ hiểu, chủ động đẩy qua push notification và lưu lại trong một app riêng cho phụ huynh, thay vì phụ thuộc vào việc họ tự vào LMS hoặc chờ thông báo định kỳ
 
 **Giải pháp thay thế hiện tại (Current alternatives):**  
 
@@ -78,7 +78,7 @@ Biến dữ liệu học tập trong hệ thống nội bộ thành các insight
 
 **Lợi thế (Advantage):**  
 
-Khả năng tích hợp trực tiếp vào hệ thống quản lý học tập hiện có của nhà trường và tận dụng dữ liệu sẵn có để tạo ra luồng thông tin liên tục tới phụ huynh
+Khả năng tích hợp trực tiếp vào hệ thống quản lý học tập hiện có của nhà trường, tận dụng dữ liệu sẵn có để tạo ra luồng thông tin liên tục, đồng thời sở hữu một bề mặt sản phẩm riêng nơi phụ huynh có thể xem lại lịch sử insight và hành động ngay
 
 ---
 
@@ -100,4 +100,3 @@ Nếu triển khai nhiều lần trong cùng một hệ thống trường học,
 Why competitors cannot easily replicate this:
 
 > Đối thủ có thể sao chép tính năng, nhưng không thể nhanh chóng tái tạo được dữ liệu lịch sử và sự hiểu biết sâu về cách vận hành cụ thể của từng trường, vốn được tích lũy qua quá trình triển khai và sử dụng liên tục.
-

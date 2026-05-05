@@ -2,25 +2,25 @@
 
 ## 1. Workshop 1: MVP Boundary Sheet
 
-- **Idea (1 câu):** Giúp phụ huynh nhận được thông tin học tập của con một cách kịp thời và có thể hành động ngay, mà không cần chờ phản hồi từ giáo viên
+- **Idea (1 câu):** Giúp phụ huynh nhận được thông tin học tập của con qua một app riêng đơn giản, kịp thời và có thể hành động ngay, mà không cần chờ phản hồi từ giáo viên
 
-- **Killer Feature:** Tự động tạo và gửi “insight học tập” ngắn gọn, dễ hiểu cho phụ huynh mỗi khi có thay đổi quan trọng
+- **Killer Feature:** Tự động tạo và đẩy “insight học tập” ngắn gọn, dễ hiểu vào app phụ huynh mỗi khi có thay đổi quan trọng
 
-- **Riskiest Assumption:** Phụ huynh có thực sự thấy các insight được gửi là đủ giá trị để họ thay đổi hành vi và hành động thường xuyên hay không
+- **Riskiest Assumption:** Phụ huynh có thực sự sẵn sàng cài app, bật thông báo và quay lại app thường xuyên nếu các insight được gửi đủ giá trị để khiến họ hành động hay không
 
 **In-Scope:**
 > - [ ] Tự động tạo insight đơn giản từ dữ liệu học tập  
 >   → (ví dụ: phát hiện điểm giảm liên tiếp, nhận xét tiêu cực)
 >
-> - [ ] Gửi insight tới phụ huynh qua một kênh duy nhất (ví dụ: Zalo hoặc SMS)  
->   → đảm bảo phụ huynh thực sự nhận được
+> - [ ] App riêng cho phụ huynh với push notification và feed insight gần nhất  
+>   → đảm bảo phụ huynh nhận được thông tin và có nơi xem lại context
 >
 > - [ ] Cho phép phụ huynh phản hồi đơn giản (ví dụ: "Tôi đã xem", "Tôi cần hỗ trợ")  
->   → để đo mức độ engagement / hành động
+>   → để đo mức độ engagement / hành động ngay trong app
 
 **Out-of-Scope:**
-> - Dashboard xem toàn bộ điểm số và lịch sử học tập  
->   → không cần để test insight
+> - Dashboard phân tích phức tạp cho nhà trường hoặc giáo viên  
+>   → không cần để test insight của phụ huynh
 >
 > - Chat realtime giữa phụ huynh và giáo viên  
 >   → không phải core hypothesis
@@ -31,13 +31,13 @@
 > - Cá nhân hóa sâu cho từng học sinh  
 >   → chưa cần ở giai đoạn test
 >
-> - Hỗ trợ nhiều kênh (app, email, SMS, web)  
->   → chỉ cần 1 kênh duy nhất
+> - Tích hợp Zalo, SMS, email hoặc web portal song song  
+>   → giai đoạn đầu chỉ tập trung vào app riêng
 
 **Non-Goals:**
 > - Xây dựng hệ thống quản lý học tập hoàn chỉnh thay thế trường học  
 > - Tạo nền tảng giao tiếp toàn diện giữa phụ huynh và giáo viên  
-> - Tối ưu trải nghiệm UI/UX phức tạp cho dashboard  
+> - Xây dựng một mạng xã hội học đường hoặc chat app đầy đủ tính năng  
 > - Đạt độ chính xác AI cao ngay từ đầu
 
 ---
@@ -46,7 +46,7 @@
 
 - **Problem Statement:** Phụ huynh học sinh cấp 1–2 thường chỉ nắm được tình hình học tập của con vào các mốc thông báo định kỳ hoặc khi chủ động hỏi, khiến việc phát hiện vấn đề diễn ra quá muộn để can thiệp hiệu quả.
 
-- **Target User:** Phụ huynh học sinh cấp 1–2 tại các trường đã có hệ thống quản lý học tập, nhưng không có thói quen đăng nhập thường xuyên để theo dõi tiến độ học tập của con.
+- **Target User:** Phụ huynh học sinh cấp 1–2 tại các trường đã có hệ thống quản lý học tập, không có thói quen đăng nhập LMS thường xuyên, nhưng sẵn sàng dùng một app đơn giản nếu nó chủ động báo khi có vấn đề đáng chú ý.
 
 **User Story 1:**
 > Là một phụ huynh học sinh cấp 1–2,
@@ -61,6 +61,7 @@
 **Success Metrics:**
 > - Tỷ lệ phụ huynh thực hiện hành động sau khi nhận insight trong vòng 24 giờ
 > Ngưỡng thành công: 30–40%
+> - % phụ huynh cài app và bật thông báo sau khi được mời
 > - % insight được mở / đọc
 > Target: ≥ 70%
 > - % phụ huynh tiếp tục tương tác với insight trong tuần tiếp theo
@@ -70,8 +71,8 @@
 > - Hệ thống quản lý học tập của nhà trường  
 >   → để lấy dữ liệu điểm số và nhận xét của học sinh
 >
-> - Kênh gửi thông tin tới phụ huynh (ví dụ: Zalo API, SMS, Mobile App)  
->   → để deliver insight trực tiếp
+> - Ứng dụng mobile cho phụ huynh + hạ tầng push notification  
+>   → để deliver insight trực tiếp và giữ lịch sử tương tác
 >
 > - Nguồn dữ liệu học tập cơ bản  
 >   → điểm số, nhận xét của giáo viên (có sẵn trong hệ thống)
@@ -426,7 +427,7 @@
 >   - họ có đọc không
 >   - họ có phản hồi hoặc hành động không
 
-- **Riskiest Assumption behind #1:** Phụ huynh sẽ thấy các insight học tập được gửi là đủ giá trị và đáng tin để họ thay đổi hành vi và hành động, thay vì tiếp tục dựa vào các cách hiện tại như hỏi con hoặc giáo viên.
+- **Riskiest Assumption behind #1:** Phụ huynh sẽ thấy các insight học tập đủ giá trị và đáng tin để họ cài app, bật thông báo và thay đổi hành vi, thay vì tiếp tục dựa vào các cách hiện tại như hỏi con hoặc giáo viên.
 
 **Cheapest test for #1:**
 > **Phương pháp:**
@@ -437,7 +438,7 @@
 > **Cách thực hiện:**
 > - Thu thập dữ liệu học tập đơn giản (điểm số, nhận xét) từ 5–10 học sinh
 > - Tự viết các insight ngắn gọn (bằng tay, không cần AI)
-> - Gửi insight cho phụ huynh qua Zalo / SMS / Mobile App như một tin nhắn bình thường
+> - Đưa insight vào một prototype app đơn giản cho phụ huynh và gửi push notification thử nghiệm
 >
 > ---
 >
@@ -445,17 +446,18 @@
 > - Phụ huynh có đọc không
 > - Phụ huynh có phản hồi / hành động không
 > - Phụ huynh có hỏi thêm hoặc liên hệ giáo viên không
+> - Phụ huynh có cài app và bật thông báo không
 >
 > ---
 >
 > **Chi phí:**
-> - Gần như bằng 0 (không cần build hệ thống)
-> - Chỉ tốn thời gian viết insight và gửi tin nhắn
+> - Thấp nhưng không bằng 0
+> - Tốn thời gian làm prototype app đơn giản, viết insight và cấu hình push thử nghiệm
 >
 > ---
 >
 > **Thời gian:**
-> - 1–2 ngày để chuẩn bị
+> - 2–4 ngày để chuẩn bị
 > - 2–3 ngày để quan sát phản ứng
 
 **Hypothesis 2:**
@@ -489,7 +491,7 @@
 > Version B (insight):
 > → "Điểm Toán của con bạn giảm trong 2 lần gần nhất, có dấu hiệu sa sút — nên xem lại phần đại số"
 >
-> - Gửi cho phụ huynh (hoặc hỏi trực tiếp)
+> - Hiển thị cho phụ huynh trong app prototype (hoặc hỏi trực tiếp kèm mockup)
 >
 > ---
 >
@@ -540,7 +542,7 @@
 > - Số lượng insight được gửi đi  
 > → Là output của hệ thống, không phải hành vi người dùng
 >
-> - Tỷ lệ mở tin nhắn (open rate)  
+> - Tỷ lệ mở notification hoặc mở app (open rate)  
 > → Người dùng có thể đọc nhưng không hành động
 >
 > - Số lượt xem / click  
@@ -572,15 +574,15 @@
 **Issue 2 + action:**
 > ### Issue 2
 >
-> Phụ huynh có thể không thay đổi hành vi, tiếp tục sử dụng các cách quen thuộc như hỏi trực tiếp con hoặc giáo viên, thay vì tin và hành động dựa trên insight từ hệ thống.
+> Phụ huynh có thể không muốn cài thêm app hoặc không bật thông báo, khiến insight không đến được đúng lúc dù nội dung có giá trị.
 >
 > **Action:**
 >
-> - Thiết kế insight tập trung vào các trường hợp có dấu hiệu rõ ràng (high-signal cases)
-> - Tăng độ tin cậy bằng cách hiển thị context (ví dụ: so sánh 2–3 lần gần nhất)
-> - Bổ sung cơ chế "Cần hỗ trợ thêm" để bridge sang hành động thực tế
-> - Theo dõi hành vi lặp lại để đánh giá mức độ hình thành thói quen
+> - Thiết kế onboarding cực ngắn và chỉ yêu cầu những bước tối thiểu
+> - Dùng push notification cho các trường hợp high-signal thay vì mọi cập nhật nhỏ
+> - Tăng độ tin cậy bằng cách hiển thị context trong app (ví dụ: so sánh 2–3 lần gần nhất)
+> - Theo dõi đồng thời activation, notification opt-in và hành vi lặp lại
 
 - **Biggest change between A and B:** Chuyển từ việc tập trung vào cải thiện giao tiếp giữa phụ huynh và giáo viên (communication-driven) sang việc cung cấp insight chủ động giúp phụ huynh hành động kịp thời (insight-driven).
 
-- **Weakest link now:** Chất lượng và mức độ “đáng hành động” của insight — liệu các insight được tạo ra có đủ rõ ràng, đáng tin và đủ quan trọng để khiến phụ huynh thực sự hành động hay không.
+- **Weakest link now:** Kết hợp giữa chất lượng insight và friction cài app — liệu các insight có đủ rõ ràng, đáng tin và đủ quan trọng để phụ huynh chấp nhận cài app rồi hành động lặp lại hay không.
